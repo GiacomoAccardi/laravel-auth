@@ -30,7 +30,10 @@
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}">
-                                            <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-primary me-1"><i class="fas fa-eye"></i></button>
+                                        </a>
+                                        <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}">
+                                            <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
                                         </a>
                                     </div>
                                 </td>
