@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
         for($i=0; $i<10; $i++){
             $project = new Project();
             $project->name = $faker->sentence(3);
-            $project->slug = str::slug($project->name, '-');
+            $project->slug = Str::slug($project->name, '-');
             $project->summary = $faker->paragraph(3, true);;
 
             $project->save();
