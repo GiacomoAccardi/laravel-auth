@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
@@ -35,20 +37,22 @@ class ProjectController extends Controller
      * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
 
         $form_data['slug'] = Project::generateSlug($form_data['name'], '-');
 
         $project = new Project();
         $project->fill($form_data);
 
+        
+
         //dd($form_data);
 
         $project->save();
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('success', 'Progetto creato con successo!');;
     }
 
     /**

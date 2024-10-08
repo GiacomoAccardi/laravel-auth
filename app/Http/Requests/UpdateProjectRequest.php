@@ -23,8 +23,20 @@ class UpdateProjectRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
-            //
+            'name' => 'required|string|max:200',
+            'slug' => 'required|string|max:255',
+            'summary' => 'nullable|string',
+        ];
+    }
+
+    public function messages(){
+        return [
+            "name.required" => "Il nome del progetto è obbligatorio",
+            "name.max" => "Il nome del progetto deve essere lungo al massimo :max caratteri",
+            "slug.required" => "lo slug del progetto è obbligatorio",
+            "slug.max" => "lo slug del progetto deve essere lungo al massimo :max caratteri"
         ];
     }
 }
