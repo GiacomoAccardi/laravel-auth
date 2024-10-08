@@ -25,11 +25,11 @@
                         <div class="col-12 mb-3">
                             <label class="control-lable">Nome progetto</label>
                             <input type="text" name="name" id="" class="form-control form-control-sm"
-                                placeholder="Nome progetto">
+                                placeholder="Nome progetto" value="{{ old('name') }}">
                         </div>
                         <div class="col-12 mb-3">
                             <label class="control-lable">Sommario Progetto</label>
-                            <textarea name="summary" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea>
+                            <textarea name="summary" id="" cols="30" rows="10" class="form-control form-control-sm">{{ old('summary') }}</textarea>
                         </div>
                         <div class="col-12 mb-3">
                             <button type="submit" class="btn btn-sm btn-success">Salva</button>
