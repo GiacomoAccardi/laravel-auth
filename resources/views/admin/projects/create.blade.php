@@ -28,6 +28,10 @@
                                 placeholder="Nome progetto" value="{{ old('name') }}">
                         </div>
                         <div class="col-12 mb-3">
+                            <label class="control-lable">Immagine</label>
+                            <input type="file" name="image" id="" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-12 mb-3">
                             <label class="control-lable">Sommario Progetto</label>
                             <textarea name="summary" id="" cols="30" rows="10" class="form-control form-control-sm">{{ old('summary') }}</textarea>
                         </div>
