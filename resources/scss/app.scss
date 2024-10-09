@@ -28,3 +28,11 @@ header {
     height: calc(100vh - 75px);
     overflow-y: auto;
 }
+
+.project-ref {
+    img {
+        width: 512px;
+        height: 340px;
+        object-fit: contain;
+    }
+}
