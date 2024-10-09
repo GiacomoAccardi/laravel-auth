@@ -18,7 +18,8 @@
                         </div>
                     </div>
                 @endif
-                <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="post">
+                <form action="{{ route('admin.projects.update', ['project' => $project->id]) }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -26,6 +27,20 @@
                             <label class="control-lable">Nome progetto</label>
                             <input type="text" name="name" id="" class="form-control form-control-sm"
                                 placeholder="Nome progetto" value="{{ old('name', $project->name) }}">
+                        </div>
+                        @if ($project->image != null)
+                            <div class="project-ref mb-3">
+                                <img src="{{ asset('./storage/' . $project->image) }}" alt="{{ $project->name }}">
+                            </div>
+                        @else
+                            <div class="project-ref mb-3">
+                                <img src="https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+                                    alt="asd">
+                            </div>
+                        @endif
+                        <div class="col-12 mb-3">
+                            <label class="control-lable">Immagine</label>
+                            <input type="file" name="image" id="image" class="form-control form-control-sm">
                         </div>
                         <div class="col-12 mb-3">
                             <label class="control-lable">Sommario Progetto</label>
